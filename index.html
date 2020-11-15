@@ -24,7 +24,6 @@
   td {
     border-style: solid;
     border-width: 5px;
-    border-color: #BCBCBC;
     word-wrap: break-word;
   }
 
@@ -56,23 +55,22 @@
   </div>
 
   <script>
-    var username;
 
     function logSubmit(event) {
-      username = document.getElementById("input").value;
+      var username = document.getElementById("input").value;
       log.textContent = "Ați căutat după numele de utilizator: " + username;
       loadData(username);
       event.preventDefault();
     }
-    form.addEventListener('submit', logSubmit);
+    form.addEventListener('submit', logSubmit); //event listener buton cauta
 
 
     function loadData(user) {
-      document.getElementById("tabel").style.visibility = "visible";
-      getData(user);
+      document.getElementById("tabel").style.visibility = "visible"; //afisare tabel
+      getData(user);  //populare tabel
     }
 
-    function getData(user) {
+    function getData(user) { //creare campuri si populare tabel cu date din json (ajax+jquery)
       $.ajax({
         url: "https://api.github.com/users/" + user + "/repos",
         data: {
