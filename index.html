@@ -28,8 +28,9 @@
   }
 
   #log {
-    margin-top: 25 px
+    margin-top: 25px;
   }
+
 </style>
 
 <body>
@@ -72,6 +73,7 @@
 
     function getData(user) { //creare campuri si populare tabel cu date din json (ajax+jquery)
       $.ajax({
+        type: 'GET',
         url: "https://api.github.com/users/" + user + "/repos",
         data: {
           format: 'json'
@@ -110,8 +112,6 @@
           }
           table_body += '</tbody>';
           $('#tabel').html(table_body);
-
-          type: 'GET'
         }
       });
     }
