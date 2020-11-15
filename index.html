@@ -56,13 +56,13 @@
 
   <script>
 
-    function logSubmit(event) {
+    function logSubmit(event) {//get input + afisare text in log + loadData
       var username = document.getElementById("input").value;
       log.textContent = "Ați căutat după numele de utilizator: " + username;
       loadData(username);
       event.preventDefault();
     }
-    form.addEventListener('submit', logSubmit); //event listener buton cauta
+    form.addEventListener('submit', logSubmit); //adauga event listener form
 
 
     function loadData(user) {
@@ -104,7 +104,6 @@
                 table_body += '<td><a href="' + input[j] + '">';
                 table_body += input[j];
                 table_body += '</a></td>';
-
               }
             }
             table_body += '</tr>';
